@@ -19,9 +19,6 @@ struct GameInteraction: TabletopInteraction.Delegate {
             interaction.addAction(.moveEquipment(matching: equipment, childOf: destination.equipmentID, pose: destination.pose))
         }
 
-        // print("Update called, \(interaction)")
-//        var destination = interaction.value.proposedDestination?.equipmentID
-//
 //        if interaction.value.phase == .started {
 //            onPhaseStarted(interaction: interaction)
 //        }
@@ -35,13 +32,10 @@ struct GameInteraction: TabletopInteraction.Delegate {
 //            onPhaseEnded(interaction: interaction)
 //        }
 
-        // TODO: game.renderer.updateCursor(destination)
     }
 
     func onPhaseStarted(interaction: TabletopInteraction) {
-        if let block = game.tabletopGame.equipment(of: Block.self, matching: interaction.value.startingEquipmentID) {
-            print("Starting movement of \(block.id)")
-        }
+    
     }
 
     func onGesturePhaseEnded(interaction: TabletopInteraction) {
